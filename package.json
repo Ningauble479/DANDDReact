@@ -1,0 +1,30 @@
+{
+  "name": "danddreact",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "install": "cd client && npm i && npm run build",
+    "start": "cd server && node server",
+    "dev": "concurrently \"cd server && nodemon server.js\" \"cd client && npm start\"",
+    "predeploy": "cd client && npm run build",
+    "deploy": "cd client && gh-pages -d build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ningauble479/DANDDReact.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ningauble479/DANDDReact/issues"
+  },
+  "homepage": "https://github.com/Ningauble479/DANDDReact#readme",
+  "dependencies": {
+    "concurrently": "^5.1.0",
+    "nodemon": "^2.0.2"
+  },
+  "devDependencies": {
+    "gh-pages": "^2.2.0"
+  }
+}
