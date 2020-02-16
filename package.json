@@ -24,6 +24,7 @@
   "homepage": "https://github.com/Ningauble479/DANDDReact#readme",
   "dependencies": {
     "concurrently": "^5.1.0",
+    "express": "^4.17.1",
     "nodemon": "^2.0.2"
   },
   "devDependencies": {
