@@ -24,7 +24,7 @@ export default function(props){
         <Box id='card' onClick={()=>{
             setTimeout(
                 ()=>{
-                    props.openScroll(row.name)
+                    props.openScroll(row.name, row.url)
                 }, 750
             )
             changeElement(false)

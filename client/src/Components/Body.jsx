@@ -1,6 +1,6 @@
 import React from 'react'
 import Card from './Cards'
-import {Grid} from '@material-ui/core'
+import { Grid } from '@material-ui/core'
 
 export default function(props){
     return(

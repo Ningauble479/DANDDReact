@@ -27,9 +27,11 @@
 
 #openScroll {
   background-image: url('./Images/Screenshot_3.png');
-  height: 50vw;
+  max-height: 50vw;
+  min-height: 50vw;
   width: 54.5vw;
   position: relative;
+  overflow: auto;
   background-size: contain;
 }
 
@@ -60,4 +62,13 @@
   height: 118vh;
   width: 30%;
   position: relative;
+}
+
+.buttonHover:hover {
+  background-color: rgb(12,12,20,.2);
+  cursor: pointer;
+}
+
+.buttonHover:active {
+  background-color: rgb(12,12,20,.5);
 }

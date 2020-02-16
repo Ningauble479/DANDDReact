@@ -6,6 +6,7 @@ import Navigation from './Components/Navbar'
 import Body from './Components/Body'
 import Axios from 'axios'
 import OpenScroll from './Components/openScroll'
+import OpenChar from './Components/createCharScroll'
 
 
 class App extends Component{
@@ -15,10 +16,12 @@ class App extends Component{
 
     this.state={
       data: [],
+      scrollData: null,
       open: false,
       reset: false,
       affectedCards: [],
-      cardName: null
+      cardName: null,
+      openChar: false
     }
     
   }
@@ -38,13 +41,25 @@ class App extends Component{
     this.setState({affectedCards: []})
   }
 
-  openScroll = (e) => {
+  openCharScroll = () => {
+    this.setState({openChar: true})
+  }
+
+  closeChar = () => {
+    this.setState({openChar: false})
+  }
+
+  openScroll = (e, search) => {
+    Axios.get(`https://cors-anywhere.herokuapp.com/http://dnd5eapi.co${search}`)
+    .then((res)=>{
+      console.log({classInfo: res})
+      this.setState({scrollData: res.data})})
     this.setState({open: true, cardName: e})
   }
 
   closeScroll = () => {
     this.setState({open: false, reset: true})
-    setTimeout(()=>{this.setState({affectedCards: [this.state.cardName], cardName: null})},750)
+    setTimeout(()=>{this.setState({affectedCards: [this.state.cardName], cardName: null, scrollData: null})},750)
     
   }
 
@@ -62,9 +77,9 @@ class App extends Component{
     <Grid container>
 
       <OpenScroll closeScroll={this.closeScroll} state={this.state}/>
-
+      <OpenChar closeScroll={this.closeChar} state={this.state} />
       <Header item/>
-      <Navigation changeSearch={this.changeSearch} item/>
+      <Navigation openCharScroll={this.openCharScroll} changeSearch={this.changeSearch} item/>
       <Body fixCard={this.fixCard} openScroll={this.openScroll} state={this.state} item/>
     </Grid>
   );
