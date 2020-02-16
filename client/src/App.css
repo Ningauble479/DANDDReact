@@ -1,0 +1,63 @@
+#header-background {
+  background-image: url('./Images/bg-heroes_0.jpg');
+}
+
+#paperBackground {
+  background-image: url('./Images/Paper\ Background.jpg');
+}
+
+#navButtons:hover {
+  background-color: rgb(12,12,20,.2);
+  cursor: pointer;
+}
+
+#bodyContain {
+  width: 100%;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+#card {
+  background-image: url('./Images/ScrollCard.jpg');
+  height: 50vh;
+  width: 20vw;
+  background-size: cover;
+  margin: 2vw;
+}
+
+#openScroll {
+  background-image: url('./Images/Screenshot_3.png');
+  height: 50vw;
+  width: 54.5vw;
+  position: relative;
+  background-size: contain;
+}
+
+#bottomScroll {
+  width: 54vw;
+  height: 19vh;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url('./Images/Scroll-bottom.png');
+}
+
+#scrollModal {
+  position: fixed;
+  /* left: 25vw; */
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#scrollLeft {
+  height: 118vh;
+  width: 30%;
+  position: relative;
+}
+
+#scrollRight {
+  height: 118vh;
+  width: 30%;
+  position: relative;
+}
